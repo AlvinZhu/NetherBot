@@ -174,52 +174,52 @@ buttonRemove:SetText("解雇")
 
 -- Main Frame Button Functions:
 followButton:SetScript("OnClick", function()
-    SendChatMessage(".npcbot command follow", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot command follow", "GUILD")
 end)
 
 standstillButton:SetScript("OnClick", function()
-    SendChatMessage(".npcbot command standstill", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot command standstill", "GUILD")
 end)
 
 fullstopButton:SetScript("OnClick", function()
-    SendChatMessage(".npcbot command stopfully", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot command stopfully", "GUILD")
 end)
 
 distance1Button:SetScript("OnClick", function()
-    SendChatMessage(".npcbot distance attack short", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot distance attack short", "GUILD")
 end)
 
 distance2Button:SetScript("OnClick", function()
-    SendChatMessage(".npcbot distance attack long", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot distance attack long", "GUILD")
 end)
 
 buttonRecall:SetScript("OnClick", function()
-    SendChatMessage(".npcbot recall teleport", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot recall teleport", "GUILD")
 end)
 
 sendtoButton:SetScript("OnClick", function()
-    SendChatMessage(".npcbot sendto point 1", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot sendto point 1", "GUILD")
 end)
 
 pointsetButton:SetScript("OnClick", function()
-    SendChatMessage(".npcbot sendto point set 1", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot sendto point set 1", "GUILD")
 end)
 
 showButton:SetScript("OnClick", function()
-    SendChatMessage(".npcbot show", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot show", "GUILD")
 end)
 
 hideButton:SetScript("OnClick", function()
-    SendChatMessage(".npcbot hide", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot hide", "GUILD")
 end)
 
 killButton:SetScript("OnClick", function()
-    SendChatMessage(".npcbot kill", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot kill", "GUILD")
 end)
 
 redemptionButton:SetScript("OnClick", function()
     -- ChatFrame1:AddMessage(".npcbot revive")
-    SendChatMessage(".npcbot revive", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot revive", "GUILD")
 end)
 
 -- redemptionButton:SetScript("OnEnter", function(self)
@@ -241,7 +241,7 @@ adminButton:SetScript("OnClick", function()
 end)
 
 vehicleButton:SetScript("OnClick", function()
-    SendChatMessage(".npcbot vehicle eject", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot vehicle eject", "GUILD")
 end)
 
 
@@ -251,8 +251,8 @@ buttonAdd:SetScript("OnClick", function()
     local target = UnitName("target")
     if target then
         -- Target is selected, run command ".npcbot add target"
-        ChatFrame1:AddMessage(".npcbot add " .. target)
-        SendChatMessage(".npcbot add ", "CHANNEL", nil, 2)
+        -- ChatFrame1:AddMessage(".npcbot add " .. target)
+        SendChatMessage(".npcbot add ", "GUILD")
     else
         -- Target is not selected, prompt input and run command ".npcbot add (input value)"
         StaticPopupDialogs["ADD_NPC"] = {
@@ -265,8 +265,8 @@ buttonAdd:SetScript("OnClick", function()
             hideOnEscape = true,
             OnAccept = function(self)
                 local npc = self.editBox:GetText()
-                ChatFrame1:AddMessage(".npcbot add " .. npc)
-                SendChatMessage(".npcbot add " .. npc, "CHANNEL", nil, 2)
+                -- ChatFrame1:AddMessage(".npcbot add " .. npc)
+                SendChatMessage(".npcbot add " .. npc, "GUILD")
             end
         }
         StaticPopup_Show("ADD_NPC")
@@ -277,8 +277,8 @@ buttonRemove:SetScript("OnClick", function()
     local target = UnitName("target")
     if target then
         -- Target is selected, run command ".npcbot remove target"
-        ChatFrame1:AddMessage(".npcbot remove " .. target)
-        SendChatMessage(".npcbot remove ", "CHANNEL", nil, 2)
+        -- ChatFrame1:AddMessage(".npcbot remove " .. target)
+        SendChatMessage(".npcbot remove ", "GUILD")
     else
         -- Target is not selected, prompt input and run command ".npcbot remove (input value)"
         StaticPopupDialogs["REMOVE_NPC"] = {
@@ -291,8 +291,8 @@ buttonRemove:SetScript("OnClick", function()
             hideOnEscape = true,
             OnAccept = function(self)
                 local npc = self.editBox:GetText()
-                ChatFrame1:AddMessage(".npcbot remove " .. npc)
-                SendChatMessage(".npcbot remove " .. npc, "CHANNEL", nil, 2)
+                -- ChatFrame1:AddMessage(".npcbot remove " .. npc)
+                SendChatMessage(".npcbot remove " .. npc, "GUILD")
             end
         }
         StaticPopup_Show("REMOVE_NPC")
@@ -300,12 +300,12 @@ buttonRemove:SetScript("OnClick", function()
 end)
 
 buttonBotinfo:SetScript("OnClick", function()
-    SendChatMessage(".npcbot info", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot info", "GUILD")
     DoEmote("BONK")
 end)
 
 buttonMove:SetScript("OnClick", function()
-    SendChatMessage(".npcbot move", "CHANNEL", nil, 2)
+    SendChatMessage(".npcbot move", "GUILD")
 end)
 
 buttonDelete:SetScript("OnClick", function()
@@ -320,8 +320,8 @@ buttonDelete:SetScript("OnClick", function()
             local target = UnitName("target")
             if target then
                 -- Target is selected, run command ".npcbot delete target"
-                ChatFrame1:AddMessage(".npcbot delete " .. target)
-                SendChatMessage(".npcbot delete ", "CHANNEL", nil, 2)
+                -- ChatFrame1:AddMessage(".npcbot delete " .. target)
+                SendChatMessage(".npcbot delete ", "GUILD")
             else
                 -- Target is not selected, prompt input and run command ".npcbot delete (input value)"
                 StaticPopupDialogs["DELETE_NPC"] = {
@@ -334,8 +334,8 @@ buttonDelete:SetScript("OnClick", function()
                     hideOnEscape = true,
                     OnAccept = function(self)
                         local npc = self.editBox:GetText()
-                        ChatFrame1:AddMessage(".npcbot delete " .. npc)
-                        SendChatMessage(".npcbot delete " .. npc, "CHANNEL", nil, 2)
+                        -- ChatFrame1:AddMessage(".npcbot delete " .. npc)
+                        SendChatMessage(".npcbot delete " .. npc, "GUILD")
                     end
                 }
                 StaticPopup_Show("DELETE_NPC")
@@ -421,7 +421,7 @@ for key, value in pairs(classTable) do
 
     -- Handle the button's click event
     button:SetScript("OnClick", function()
-        SendChatMessage(".npcbot lookup " .. value, "CHANNEL", nil, 2)
+        SendChatMessage(".npcbot lookup " .. value, "GUILD")
         -- You can add your custom functionality here like running a command or doing some other action
     end)
 end
@@ -479,7 +479,7 @@ buttonSpawnBot:SetScript("OnClick", function()
         classInput:SetText("")
         classInput:ClearFocus()
     else
-        print("请输入ID:")
+        print("请输入ID")
     end
 end)
 
